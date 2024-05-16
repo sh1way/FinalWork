@@ -13,7 +13,7 @@
 
 int main() {
 	setlocale(LC_ALL, "");
-	__int8 a = 6, b = 2, c = 3, d = 4, e = 2, h = 4, y, mass1[20], mass2[20];
+	__int8 a11 = 6, b11 = 2, c11 = 3, d = 4, e = 2, h = 4, y, mass1[20], mass2[20];
 	_asm {
 		
 		mov ecx, 10
@@ -22,9 +22,9 @@ int main() {
 		
 			cycle2:
 			//(a + b) * c - d / e
-			mov al, a
-			add al, b
-			imul c
+			mov al, a11
+			add al, b11
+			imul c11
 			mov bl, d
 			cbw
 			idiv e
@@ -37,7 +37,7 @@ int main() {
 			add esi, 1
 			
 				mov al, h
-				add c, al
+				add c11, al
 			loop cycle2
 				mov ecx, 10
 				lea esi, mass2
@@ -45,14 +45,14 @@ int main() {
 			//(a + b) * c - d / e
 
 				//значение аргумента
-				mov al, c
+				mov al, c11
 				mov[esi], al
 				add esi, 1
 				mov[esi], ecx
 				add esi, 1
 
 				mov al, h
-				add c, al
+				add c11, al
 				loop cycle1
 	}
 	
